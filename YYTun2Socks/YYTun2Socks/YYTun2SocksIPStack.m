@@ -17,6 +17,7 @@
 @interface YYTun2SocksIPStack ()
 
 @property (nonatomic, weak) id<YYTun2SocksIPStackDelegate> delegate;
+
 @property (nonatomic, copy) outputPacketCallback outputCallback;
 
 @property (nonatomic, strong) dispatch_queue_t processQueue;
@@ -31,28 +32,11 @@
 
 @implementation YYTun2SocksIPStack
 
-/** Function prototype for tcp accept callback functions. Called when a new
- * connection can be accepted on a listening pcb.
- *
- * @param arg Additional argument to pass to the callback function (@see tcp_arg())
- * @param newpcb The new connection pcb
- * @param err An error code if there has been an error accepting.
- *            Only return ERR_ABRT if you have called tcp_abort from within the
- *            callback function!
- */
 static err_t tcpAcceptCallback(void *arg, struct tcp_pcb *newpcb, err_t err)
 {
     return [[YYTun2SocksIPStack defaultTun2SocksIPStack] didAcceptTcpPcb:newpcb error:err];
 }
 
-/** Function prototype for netif->output functions. Called by lwIP when a packet
- * shall be sent. For ethernet netif, set this to 'etharp_output' and set
- * 'linkoutput'.
- *
- * @param netif The netif which shall send a packet
- * @param p The packet to send (p->payload points to IP header)
- * @param ipaddr The IP address to which the packet shall be sent
- */
 static err_t packetOutput(struct netif *netif, struct pbuf *p,
 const ip4_addr_t *ipaddr)
 {
