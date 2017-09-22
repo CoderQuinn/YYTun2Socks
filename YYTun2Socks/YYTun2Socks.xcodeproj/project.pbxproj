@@ -461,6 +461,7 @@
 		EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2SocksPrefixHeader.pch; sourceTree = "<group>"; };
 		EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTSTCPSocket.h; sourceTree = "<group>"; };
 		EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTSTCPSocket.m; sourceTree = "<group>"; };
+		EAEC379F1F7514A600B9A9E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -484,8 +485,9 @@
 		EA65C5FF1F72165700350638 = {
 			isa = PBXGroup;
 			children = (
-				EA663DF61F726D0B007A2F8C /* YYTun2Socks */,
 				EA65C60C1F72525D00350638 /* Products */,
+				EA663DF61F726D0B007A2F8C /* YYTun2Socks */,
+				EAEC379F1F7514A600B9A9E7 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
