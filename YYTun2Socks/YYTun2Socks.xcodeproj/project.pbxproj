@@ -198,6 +198,7 @@
 		EA5B4D541F727BFF00ED6F9F /* YYTun2Socks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYTun2Socks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5B4D611F727DB400ED6F9F /* YYTSIPStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTSIPStack.h; sourceTree = "<group>"; };
 		EA5B4D621F727DB400ED6F9F /* YYTSIPStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTSIPStack.m; sourceTree = "<group>"; };
+		EA5C540C1F755F3D00E2DBA9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EA663DF71F726D0B007A2F8C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA663DF91F726D0B007A2F8C /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		EA663DFA1F726D0B007A2F8C /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
@@ -461,7 +462,6 @@
 		EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2SocksPrefixHeader.pch; sourceTree = "<group>"; };
 		EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTSTCPSocket.h; sourceTree = "<group>"; };
 		EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTSTCPSocket.m; sourceTree = "<group>"; };
-		EAEC379F1F7514A600B9A9E7 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -485,9 +485,9 @@
 		EA65C5FF1F72165700350638 = {
 			isa = PBXGroup;
 			children = (
+				EA5C540C1F755F3D00E2DBA9 /* README.md */,
 				EA65C60C1F72525D00350638 /* Products */,
 				EA663DF61F726D0B007A2F8C /* YYTun2Socks */,
-				EAEC379F1F7514A600B9A9E7 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
