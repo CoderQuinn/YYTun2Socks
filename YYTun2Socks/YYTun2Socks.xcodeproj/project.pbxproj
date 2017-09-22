@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		EA5B4D5C1F727C8500ED6F9F /* YYTun2Socks.h in Headers */ = {isa = PBXBuildFile; fileRef = EA663F201F726D0C007A2F8C /* YYTun2Socks.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EA5B4D5D1F727C8C00ED6F9F /* YYTun2Socks.h in Headers */ = {isa = PBXBuildFile; fileRef = EA663F201F726D0C007A2F8C /* YYTun2Socks.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA5B4D631F727DB400ED6F9F /* YYTun2SocksIPStack.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5B4D611F727DB400ED6F9F /* YYTun2SocksIPStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA5B4D641F727DB400ED6F9F /* YYTun2SocksIPStack.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5B4D611F727DB400ED6F9F /* YYTun2SocksIPStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		EA5B4D651F727DB400ED6F9F /* YYTun2SocksIPStack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5B4D621F727DB400ED6F9F /* YYTun2SocksIPStack.m */; };
-		EA5B4D661F727DB400ED6F9F /* YYTun2SocksIPStack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5B4D621F727DB400ED6F9F /* YYTun2SocksIPStack.m */; };
+		EA5B4D631F727DB400ED6F9F /* YYTSIPStack.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5B4D611F727DB400ED6F9F /* YYTSIPStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA5B4D641F727DB400ED6F9F /* YYTSIPStack.h in Headers */ = {isa = PBXBuildFile; fileRef = EA5B4D611F727DB400ED6F9F /* YYTSIPStack.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EA5B4D651F727DB400ED6F9F /* YYTSIPStack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5B4D621F727DB400ED6F9F /* YYTSIPStack.m */; };
+		EA5B4D661F727DB400ED6F9F /* YYTSIPStack.m in Sources */ = {isa = PBXBuildFile; fileRef = EA5B4D621F727DB400ED6F9F /* YYTSIPStack.m */; };
 		EA5B4D671F7280C700ED6F9F /* cc.h in Headers */ = {isa = PBXBuildFile; fileRef = EA663DFE1F726D0B007A2F8C /* cc.h */; };
 		EA5B4D681F7280C700ED6F9F /* perf.h in Headers */ = {isa = PBXBuildFile; fileRef = EA663DFF1F726D0B007A2F8C /* perf.h */; };
 		EA5B4D691F7280C700ED6F9F /* sys_arch.h in Headers */ = {isa = PBXBuildFile; fileRef = EA663E001F726D0B007A2F8C /* sys_arch.h */; };
@@ -185,21 +185,19 @@
 		EAE1D3841F72D01F00574139 /* timeouts.c in Sources */ = {isa = PBXBuildFile; fileRef = EA663EF31F726D0C007A2F8C /* timeouts.c */; };
 		EAE1D3851F72D01F00574139 /* udp.c in Sources */ = {isa = PBXBuildFile; fileRef = EA663EF41F726D0C007A2F8C /* udp.c */; };
 		EAE1D3871F72D01F00574139 /* sys_arch.c in Sources */ = {isa = PBXBuildFile; fileRef = EA663EF71F726D0C007A2F8C /* sys_arch.c */; };
-		EAE1D3891F73A7EA00574139 /* YYWeakifMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D3881F73A7EA00574139 /* YYWeakifMacro.h */; };
-		EAE1D38A1F73A7EA00574139 /* YYWeakifMacro.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D3881F73A7EA00574139 /* YYWeakifMacro.h */; };
 		EAE1D38C1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */; };
 		EAE1D38D1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */; };
-		EAE1D3901F73C41400574139 /* YYTun2SocksTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38E1F73C41300574139 /* YYTun2SocksTCPSocket.h */; };
-		EAE1D3911F73C41400574139 /* YYTun2SocksTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38E1F73C41300574139 /* YYTun2SocksTCPSocket.h */; };
-		EAE1D3921F73C41400574139 /* YYTun2SocksTCPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE1D38F1F73C41400574139 /* YYTun2SocksTCPSocket.m */; };
-		EAE1D3931F73C41400574139 /* YYTun2SocksTCPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE1D38F1F73C41400574139 /* YYTun2SocksTCPSocket.m */; };
+		EAE1D3901F73C41400574139 /* YYTSTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAE1D3911F73C41400574139 /* YYTSTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EAE1D3921F73C41400574139 /* YYTSTCPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */; };
+		EAE1D3931F73C41400574139 /* YYTSTCPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EA5B4D471F727B0D00ED6F9F /* YYTun2Socks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYTun2Socks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA5B4D541F727BFF00ED6F9F /* YYTun2Socks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YYTun2Socks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EA5B4D611F727DB400ED6F9F /* YYTun2SocksIPStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2SocksIPStack.h; sourceTree = "<group>"; };
-		EA5B4D621F727DB400ED6F9F /* YYTun2SocksIPStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTun2SocksIPStack.m; sourceTree = "<group>"; };
+		EA5B4D611F727DB400ED6F9F /* YYTSIPStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTSIPStack.h; sourceTree = "<group>"; };
+		EA5B4D621F727DB400ED6F9F /* YYTSIPStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTSIPStack.m; sourceTree = "<group>"; };
 		EA663DF71F726D0B007A2F8C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA663DF91F726D0B007A2F8C /* CHANGELOG */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG; sourceTree = "<group>"; };
 		EA663DFA1F726D0B007A2F8C /* COPYING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = COPYING; sourceTree = "<group>"; };
@@ -460,10 +458,9 @@
 		EA663F1E1F726D0C007A2F8C /* slipif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = slipif.c; sourceTree = "<group>"; };
 		EA663F1F1F726D0C007A2F8C /* UPGRADING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UPGRADING; sourceTree = "<group>"; };
 		EA663F201F726D0C007A2F8C /* YYTun2Socks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2Socks.h; sourceTree = "<group>"; };
-		EAE1D3881F73A7EA00574139 /* YYWeakifMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakifMacro.h; sourceTree = "<group>"; };
 		EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2SocksPrefixHeader.pch; sourceTree = "<group>"; };
-		EAE1D38E1F73C41300574139 /* YYTun2SocksTCPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2SocksTCPSocket.h; sourceTree = "<group>"; };
-		EAE1D38F1F73C41400574139 /* YYTun2SocksTCPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTun2SocksTCPSocket.m; sourceTree = "<group>"; };
+		EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTSTCPSocket.h; sourceTree = "<group>"; };
+		EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTSTCPSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -504,15 +501,14 @@
 		EA663DF61F726D0B007A2F8C /* YYTun2Socks */ = {
 			isa = PBXGroup;
 			children = (
-				EAE1D38E1F73C41300574139 /* YYTun2SocksTCPSocket.h */,
-				EAE1D38F1F73C41400574139 /* YYTun2SocksTCPSocket.m */,
-				EA5B4D611F727DB400ED6F9F /* YYTun2SocksIPStack.h */,
-				EA5B4D621F727DB400ED6F9F /* YYTun2SocksIPStack.m */,
-				EA663DF81F726D0B007A2F8C /* lwip */,
-				EAE1D3881F73A7EA00574139 /* YYWeakifMacro.h */,
+				EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */,
+				EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */,
+				EA5B4D611F727DB400ED6F9F /* YYTSIPStack.h */,
+				EA5B4D621F727DB400ED6F9F /* YYTSIPStack.m */,
 				EA663F201F726D0C007A2F8C /* YYTun2Socks.h */,
-				EA663DF71F726D0B007A2F8C /* Info.plist */,
 				EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */,
+				EA663DF71F726D0B007A2F8C /* Info.plist */,
+				EA663DF81F726D0B007A2F8C /* lwip */,
 			);
 			path = YYTun2Socks;
 			sourceTree = "<group>";
@@ -1062,7 +1058,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5B4D5C1F727C8500ED6F9F /* YYTun2Socks.h in Headers */,
-				EA5B4D631F727DB400ED6F9F /* YYTun2SocksIPStack.h in Headers */,
+				EAE1D3901F73C41400574139 /* YYTSTCPSocket.h in Headers */,
+				EA5B4D631F727DB400ED6F9F /* YYTSIPStack.h in Headers */,
 				EA5B4D6C1F7280EE00ED6F9F /* api.h in Headers */,
 				EA5B4D6D1F7280EE00ED6F9F /* arch.h in Headers */,
 				EA5B4D6E1F7280EE00ED6F9F /* autoip.h in Headers */,
@@ -1092,10 +1089,8 @@
 				EA5B4D851F7280EE00ED6F9F /* ip_addr.h in Headers */,
 				EA5B4D861F7280EE00ED6F9F /* mem.h in Headers */,
 				EA5B4D871F7280EE00ED6F9F /* memp.h in Headers */,
-				EAE1D3891F73A7EA00574139 /* YYWeakifMacro.h in Headers */,
 				EA5B4D881F7280EE00ED6F9F /* mld6.h in Headers */,
 				EA5B4D891F7280EE00ED6F9F /* nd6.h in Headers */,
-				EAE1D3901F73C41400574139 /* YYTun2SocksTCPSocket.h in Headers */,
 				EA5B4D8A1F7280EE00ED6F9F /* netbuf.h in Headers */,
 				EA5B4D8B1F7280EE00ED6F9F /* netdb.h in Headers */,
 				EA5B4D8C1F7280EE00ED6F9F /* netif.h in Headers */,
@@ -1124,7 +1119,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA5B4D5D1F727C8C00ED6F9F /* YYTun2Socks.h in Headers */,
-				EA5B4D641F727DB400ED6F9F /* YYTun2SocksIPStack.h in Headers */,
+				EAE1D3911F73C41400574139 /* YYTSTCPSocket.h in Headers */,
+				EA5B4D641F727DB400ED6F9F /* YYTSIPStack.h in Headers */,
 				EAE1D3321F72CFAF00574139 /* api.h in Headers */,
 				EAE1D3331F72CFAF00574139 /* arch.h in Headers */,
 				EAE1D3341F72CFAF00574139 /* autoip.h in Headers */,
@@ -1154,10 +1150,8 @@
 				EAE1D34B1F72CFAF00574139 /* ip_addr.h in Headers */,
 				EAE1D34C1F72CFAF00574139 /* mem.h in Headers */,
 				EAE1D34D1F72CFAF00574139 /* memp.h in Headers */,
-				EAE1D38A1F73A7EA00574139 /* YYWeakifMacro.h in Headers */,
 				EAE1D34E1F72CFAF00574139 /* mld6.h in Headers */,
 				EAE1D34F1F72CFAF00574139 /* nd6.h in Headers */,
-				EAE1D3911F73C41400574139 /* YYTun2SocksTCPSocket.h in Headers */,
 				EAE1D3501F72CFAF00574139 /* netbuf.h in Headers */,
 				EAE1D3511F72CFAF00574139 /* netdb.h in Headers */,
 				EAE1D3521F72CFAF00574139 /* netif.h in Headers */,
@@ -1311,11 +1305,11 @@
 				EA5B4DB91F72814900ED6F9F /* tcp_in.c in Sources */,
 				EA5B4DBA1F72814900ED6F9F /* tcp_out.c in Sources */,
 				EA5B4DBB1F72814900ED6F9F /* timeouts.c in Sources */,
-				EAE1D3921F73C41400574139 /* YYTun2SocksTCPSocket.m in Sources */,
+				EAE1D3921F73C41400574139 /* YYTSTCPSocket.m in Sources */,
 				EA5B4DBC1F72814900ED6F9F /* udp.c in Sources */,
 				EA5B4DBD1F72814900ED6F9F /* sys_arch.c in Sources */,
 				EA5B4D9A1F72811B00ED6F9F /* err.c in Sources */,
-				EA5B4D651F727DB400ED6F9F /* YYTun2SocksIPStack.m in Sources */,
+				EA5B4D651F727DB400ED6F9F /* YYTSIPStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1356,11 +1350,11 @@
 				EAE1D3821F72D01F00574139 /* tcp_in.c in Sources */,
 				EAE1D3831F72D01F00574139 /* tcp_out.c in Sources */,
 				EAE1D3841F72D01F00574139 /* timeouts.c in Sources */,
-				EAE1D3931F73C41400574139 /* YYTun2SocksTCPSocket.m in Sources */,
+				EAE1D3931F73C41400574139 /* YYTSTCPSocket.m in Sources */,
 				EAE1D3851F72D01F00574139 /* udp.c in Sources */,
 				EAE1D3871F72D01F00574139 /* sys_arch.c in Sources */,
 				EAE1D3601F72D00A00574139 /* err.c in Sources */,
-				EA5B4D661F727DB400ED6F9F /* YYTun2SocksIPStack.m in Sources */,
+				EA5B4D661F727DB400ED6F9F /* YYTSIPStack.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

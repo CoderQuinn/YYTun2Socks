@@ -1,5 +1,5 @@
 //
-//  YYTun2SocksIPStack.h
+//  YYTSIPStack.h
 //  YYTun2Socks
 //
 //  Created by Hmyy on 2017/9/20.
@@ -10,18 +10,18 @@
 
 typedef void(^outputPacketCallback)(NSData *packet, int family);
 
-@class YYTun2SocksTCPSocket;
-@protocol YYTun2SocksIPStackDelegate;
+@class YYTSTCPSocket;
+@protocol YYTSIPStackDelegate;
 
-@interface YYTun2SocksIPStack : NSObject
+@interface YYTSIPStack : NSObject
 
-@property (nonatomic, weak, readonly) id<YYTun2SocksIPStackDelegate> delegate;
+@property (nonatomic, weak, readonly) id<YYTSIPStackDelegate> delegate;
 
 @property (nonatomic, copy, readonly) outputPacketCallback outputCallback;
 
 + (instancetype)defaultTun2SocksIPStack;
 
-- (void)setDelegate:(id<YYTun2SocksIPStackDelegate>)delegate;
+- (void)setDelegate:(id<YYTSIPStackDelegate>)delegate;
 
 - (void)setOutputCallback:(outputPacketCallback)outputCallback;
 
@@ -33,9 +33,9 @@ typedef void(^outputPacketCallback)(NSData *packet, int family);
 
 @end
 
-@protocol YYTun2SocksIPStackDelegate <NSObject>
+@protocol YYTSIPStackDelegate <NSObject>
 
-- (void)didAcceptTCPSocket:(YYTun2SocksTCPSocket *)socket;
+- (void)didAcceptTCPSocket:(YYTSTCPSocket *)socket;
 
 @end
 

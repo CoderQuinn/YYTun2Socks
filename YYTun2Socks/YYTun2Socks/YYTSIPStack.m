@@ -1,22 +1,23 @@
 //
-//  YYTun2SocksIPStack.m
+//  YYTSIPStack.m
 //  YYTun2Socks
 //
 //  Created by Hmyy on 2017/9/20.
 //
 //
 
-#import "YYTun2SocksIPStack.h"
-#import "YYTun2SocksTCPSocket.h"
+#import "YYTSIPStack.h"
+
+#import "YYTSTCPSocket.h"
 #include "lwip/init.h"
 #include "lwip/tcp.h"
 #include "lwip/timeouts.h"
 #include "lwip/netif.h"
 #include <sys/socket.h>
 
-@interface YYTun2SocksIPStack ()
+@interface YYTSIPStack ()
 
-@property (nonatomic, weak) id<YYTun2SocksIPStackDelegate> delegate;
+@property (nonatomic, weak) id<YYTSIPStackDelegate> delegate;
 
 @property (nonatomic, copy) outputPacketCallback outputCallback;
 
@@ -30,21 +31,21 @@
 
 @end
 
-@implementation YYTun2SocksIPStack
+@implementation YYTSIPStack
 
 static err_t tcpAcceptCallback(void *arg, struct tcp_pcb *newpcb, err_t err)
 {
-    return [[YYTun2SocksIPStack defaultTun2SocksIPStack] didAcceptTcpPcb:newpcb error:err];
+    return [[YYTSIPStack defaultTun2SocksIPStack] didAcceptTcpPcb:newpcb error:err];
 }
 
 static err_t packetOutput(struct netif *netif, struct pbuf *p,
 const ip4_addr_t *ipaddr)
 {
-    [[YYTun2SocksIPStack defaultTun2SocksIPStack] sendOutPacket:p];
+    [[YYTSIPStack defaultTun2SocksIPStack] sendOutPacket:p];
     return ERR_OK;
 }
 
-static YYTun2SocksIPStack *_instance = nil;
+static YYTSIPStack *_instance = nil;
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
@@ -85,7 +86,7 @@ static YYTun2SocksIPStack *_instance = nil;
     return [[self alloc] init];
 }
 
-- (void)setDelegate:(id<YYTun2SocksIPStackDelegate>)delegate
+- (void)setDelegate:(id<YYTSIPStackDelegate>)delegate
 {
     if (delegate != _delegate)
     {
@@ -119,10 +120,11 @@ static YYTun2SocksIPStack *_instance = nil;
     // note the default tcp_tmr interval is 250 ms.
     uint64_t defaultInterval = 250;
     dispatch_source_set_timer(self.timer, DISPATCH_TIME_NOW, defaultInterval * NSEC_PER_MSEC, 1 * NSEC_PER_MSEC);
-    @weakify(self);
+    
+    __weak __typeof(self) weakSelf = self;
     dispatch_source_set_event_handler(self.timer, ^{
-        @strongify(self);
-        [self checkTimeouts];
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf checkTimeouts];
     });
     [self restartTimeouts];
     dispatch_resume(self.timer);
@@ -158,7 +160,7 @@ static YYTun2SocksIPStack *_instance = nil;
     if (nil != self.delegate && [self.delegate respondsToSelector:@selector(didAcceptTCPSocket:)])
     {
 #warning todo
-        YYTun2SocksTCPSocket *socket = nil;
+        YYTSTCPSocket *socket = [[YYTSTCPSocket alloc] initWithTCPPcb:pcb queue:self.processQueue];
         [self.delegate didAcceptTCPSocket:socket];
     }
     return err;
