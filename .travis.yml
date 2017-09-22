@@ -1,0 +1,5 @@
+language: objective-c
+osx_image: xcode8.3
+xcode_project: YYTun2Socks.xcodeproj
+xcode_scheme: iOS YYTun2Socks
+xcode_sdk: iphonesimulator10.3
