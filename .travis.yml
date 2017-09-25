@@ -1,8 +1,5 @@
 language: objective-c
 osx_image: xcode8.3
-before_install:
-  - brew update
-  - brew outdated carthage || brew upgrade carthage
 install:
 - gem install xcpretty
 script:
@@ -13,3 +10,12 @@ after_success:
 before_deploy:
 - carthage build --no-skip-current
 - carthage archive YYTun2Socks
+deploy:
+  provider: releases
+  api_key: cbf435cf4bec5ba64dba0046e1a949b3d3882051
+  file: YYTun2Socks.framework.zip
+  skip_cleanup: true
+  on:
+    repo: Hmyy/YYTun2Socks
+    tags: true
+
