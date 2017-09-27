@@ -1,0 +1,11 @@
+output: "."
+source_directory: ../
+author: Hmyy
+readme: ../README.md
+github_url: https://github.com/Hmyy/YYTun2Socks
+min_acl: public
+module: YYTun2Socks
+
+theme: fullwidth
+
+

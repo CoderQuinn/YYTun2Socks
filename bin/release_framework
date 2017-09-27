@@ -1,20 +1,20 @@
 #!/bin/env sh
 
 carthage build --no-skip-current
-carthage archive YYTun2Socks
+carthage archive 
 
 export GOPATH=$HOME/golang
 export PATH=$PATH:$GOPATH/bin
 go get github.com/aktau/github-release
 github-release release \
-  --user Hmyy \
+  --user repo: Hmyy \
   --repo YYTun2Socks \
   --tag $CIRCLE_TAG \
   --name $CIRCLE_TAG \
   --description $CIRCLE_TAG
 
 github-release upload \
-  --user Hmyy \
+  --user repo: Hmyy \
   --repo YYTun2Socks \
   --tag $CIRCLE_TAG \
   --name YYTun2Socks.framework.zip \
