@@ -1,20 +1,23 @@
 language: objective-c
 osx_image: xcode8.3
-install:
-- gem install xcpretty
-script:
-- xcodebuild -project YYTun2Socks.xcodeproj -scheme "iOS YYTun2Socks" | xcpretty
-- xcodebuild -project YYTun2Socks.xcodeproj -scheme "macOS YYTun2Socks" | xcpretty
-after_success:
-- "./docs/build_docs.sh"
+xcode_project: YYTun2Socks.xcodeproj
+xcode_scheme: iOS YYTun2Socks macOS YYTun2Socks
+env:
+  global:
+  - FRAMEWORK_NAME=YYTun2Socks
+  matrix:
+    secure: NKXefxkK1Dp6FioTmeX6P3/nftigtv90wkt+v5X9VchxPFuWSkP3RqBidHow6zU7fuYmMt32z6aqACubnRkLhl0+MRDltsRzfHovS4EqLJU50J3/1RybieiCQNLC00tgmbEHo+eZdbOT2jad8U9IZ/2HRaZJfsRktwtUpPhrZYy0lL357Q+ltYZeI0BahNohiSR4DYApURTRR0mHgYfKglavKmrfUUUj8MKbvZQ2s9zYR13IcGTJv723HFktN2kd8He3QN6Z0ypxrzKZ6IHQFijEqfQ1/CxxCB+hvCaFExBQ57ugSaPJp6Lh6JtfhHpa+lMieDKGApbaAJ2O1MmFzp2TkTkdfWpQMoNR6shIukobEux/3i42I9uR1kHw3vKNaogDPQ0jJuCelSG7syU8T2K4jvTVvDeZ08+GsFLt0I3A7SoKGLo3pDRMpW6vdTe9VOxIM8MWVJ1t1pif6oRRZpR80fDUP8sRRDrt+/5N9DhVjWjMb+n0ZXJ2LuUcY4RPo3NLCV51Kqi41Cgljc4/L1//5KZlkfUzFdhINeIAhkdPWU8cX0d+lcIRRj/RIaToMpGc/zgO4iDMggjWlNfAgb6tpX+2VXHZdes1el2HRJcNmQGRhfr/cWAgQu4x8x3+kO+ioNL0FUyntbRMwjJJGb3c1Zq2T8H5ats8Sw4milY=
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+before_script: 
 before_deploy:
 - carthage build --no-skip-current
-- carthage archive YYTun2Socks
+- carthage archive $FRAMEWORK_NAME
 deploy:
   provider: releases
-  api_key: cbf435cf4bec5ba64dba0046e1a949b3d3882051
-  file: YYTun2Socks.framework.zip
-  skip_cleanup: true
+  api_key:
+    secure: b1CnOOI6d4aFq2LCzDpP5CeXMjBUJYaNTW1zxnEfZnxkT+YA9DQoQg+YITg5GTbf6ua4taFx6jPHjW3EOvc8capGPHCviXwrxZH0tKrG8xxYjG/ytUrqRlo5riUw/mhDQ2spYPUkR8F54/ETyA4U+TR1ei9ZhBapWd9Ka0S6kETF+DSY5PYBzsj3hfLhwzULwO1BBu9OqcKt5FR1imyxl59ZYf2Sl5LY9a+OZDgVYNBOO5h2woeqr879Qi3/n7lEaLiFXlEwG9TP6cvjU2pyhd6riC91oo5D+huVMDAShILY80rGcDxLasiZ/bi1LMd6UslUTSO+cBAfafftBXr6srep3HXQyqM8KJyeJJosxWeoFtb7OUa0CaG8pHfBzPpP6OfLMWZtWmKA9da+YfjCLQu0U0fsx1yfC4ztAcSOdu62Dn0z4wNZQuIWtbfrDVKSWRX2FObufpCIZc7gx0TR8EePfoHOfSSooBJGKmIk+/pBCgD9CnCXrCQgSwv6ubgcr2Q2/0osgD19//NRdzFYwQAXAS5+LKLzmpR9pe2A96AzVA3Ob2AcmppJZwMzWos4F3+m/Arg0wC7o9W2522aQ+39EGL6s8tgcpe8qqOz6aAH0SkoYVl3z6WPjRqtz+idiM4EIsMJp/FCIsVNx8sVOLU9l/l0cn62AAhOyGwXhBY=
+  file: "$FRAMEWORK_NAME.framework.zip"
   on:
-    tags: true
-
+    repo: Hmyy/YYTun2Socks
