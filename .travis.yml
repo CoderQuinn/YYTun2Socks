@@ -1,14 +1,14 @@
-llanguage: objective-c
-osx_image: xcode8.3
+language: objective-c
+osx_image: xcode8.1
+rvm:
+- 2.3.1
 install:
 - gem install xcpretty
 script:
 - xcodebuild -project YYTun2Socks.xcodeproj -scheme "iOS YYTun2Socks " | xcpretty
 - xcodebuild -project YYTun2Socks.xcodeproj -scheme "macOS YYTun2Socks" | xcpretty
-before_install:
-- brew update
-- brew outdated carthage || brew upgrade carthage
-before_script: 
+after_success:
+- "./docs/build_docs.sh"
 before_deploy:
 - carthage build --no-skip-current
 - carthage archive YYTun2Socks
