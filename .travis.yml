@@ -19,8 +19,10 @@ before_deploy:
 - carthage archive $FRAMEWORK_NAME
 deploy:
   provider: releases
+  skip_cleanup: true
   api_key:
     secure: b1CnOOI6d4aFq2LCzDpP5CeXMjBUJYaNTW1zxnEfZnxkT+YA9DQoQg+YITg5GTbf6ua4taFx6jPHjW3EOvc8capGPHCviXwrxZH0tKrG8xxYjG/ytUrqRlo5riUw/mhDQ2spYPUkR8F54/ETyA4U+TR1ei9ZhBapWd9Ka0S6kETF+DSY5PYBzsj3hfLhwzULwO1BBu9OqcKt5FR1imyxl59ZYf2Sl5LY9a+OZDgVYNBOO5h2woeqr879Qi3/n7lEaLiFXlEwG9TP6cvjU2pyhd6riC91oo5D+huVMDAShILY80rGcDxLasiZ/bi1LMd6UslUTSO+cBAfafftBXr6srep3HXQyqM8KJyeJJosxWeoFtb7OUa0CaG8pHfBzPpP6OfLMWZtWmKA9da+YfjCLQu0U0fsx1yfC4ztAcSOdu62Dn0z4wNZQuIWtbfrDVKSWRX2FObufpCIZc7gx0TR8EePfoHOfSSooBJGKmIk+/pBCgD9CnCXrCQgSwv6ubgcr2Q2/0osgD19//NRdzFYwQAXAS5+LKLzmpR9pe2A96AzVA3Ob2AcmppJZwMzWos4F3+m/Arg0wC7o9W2522aQ+39EGL6s8tgcpe8qqOz6aAH0SkoYVl3z6WPjRqtz+idiM4EIsMJp/FCIsVNx8sVOLU9l/l0cn62AAhOyGwXhBY=
   file: "$FRAMEWORK_NAME.framework.zip"
   on:
     repo: Hmyy/YYTun2Socks
+    tags: true
