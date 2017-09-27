@@ -1,7 +1,10 @@
 language: objective-c
 osx_image: xcode8.3
-xcode_project: YYTun2Socks.xcodeproj
-xcode_scheme: iOS YYTun2Socks macOS YYTun2Socks
+install:
+- gem install xcpretty
+script:
+- xcodebuild -project YYTun2Socks.xcodeproj -scheme "iOS YYTun2Socks " | xcpretty
+- xcodebuild -project YYTun2Socks.xcodeproj -scheme "macOS YYTun2Socks" | xcpretty
 env:
   global:
   - FRAMEWORK_NAME=YYTun2Socks
