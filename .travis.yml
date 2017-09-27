@@ -16,6 +16,5 @@ deploy:
   file: YYTun2Socks.framework.zip
   skip_cleanup: true
   on:
-    repo: Hmyy/YYTun2Socks
     tags: true
 
