@@ -17,4 +17,3 @@ FOUNDATION_EXPORT const unsigned char YYTun2SocksVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <YYTun2Socks/PublicHeader.h>
 #import <YYTun2Socks/YYTSTCPSocket.h>
 #import <YYTun2Socks/YYTSIPStack.h>
-#import <YYTun2Socks/YYTun2SocksPrefixHeader.h>

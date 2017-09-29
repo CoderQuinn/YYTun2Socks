@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign, readonly) UInt16 destinationPort;
 
-- (instancetype)initWithTCPPcb:(struct tcp_pcb*)pcb queue:(dispatch_queue_t)queue;
+- (instancetype)initWithTCPPcb:(struct tcp_pcb* _Nonnull)pcb queue:(dispatch_queue_t)queue;
 
 - (void)setDelegate:(nullable id<YYTSTCPSocketDelegate>)delegate;
 

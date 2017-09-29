@@ -32,19 +32,14 @@
 
 @implementation YYTSIPStack
 
-static err_t tcpAcceptCallback(void *arg, struct tcp_pcb *newpcb, err_t err)
-{
-    return [[YYTSIPStack defaultTun2SocksIPStack] didAcceptTcpPcb:newpcb error:err];
-}
-
-static err_t packetOutput(struct netif *netif, struct pbuf *p,
-const ip4_addr_t *ipaddr)
-{
-    [[YYTSIPStack defaultTun2SocksIPStack] sendOutPacket:p];
-    return ERR_OK;
-}
-
 static YYTSIPStack *_instance = nil;
+
+#pragma mark - Class methods
+
++(instancetype)defaultTun2SocksIPStack
+{
+    return [[self alloc] init];
+}
 
 + (instancetype)allocWithZone:(struct _NSZone *)zone
 {
@@ -54,6 +49,8 @@ static YYTSIPStack *_instance = nil;
     });
     return _instance;
 }
+
+#pragma mark - Instance methods
 
 - (instancetype)init
 {
@@ -78,11 +75,6 @@ static YYTSIPStack *_instance = nil;
     self.defaultInterface = netif_list;
     netif_set_default(self.defaultInterface);
     self.defaultInterface->output = packetOutput;
-}
-
-+(instancetype)defaultTun2SocksIPStack
-{
-    return [[self alloc] init];
 }
 
 - (void)setDelegate:(id<YYTSIPStackDelegate>)delegate
@@ -165,4 +157,20 @@ static YYTSIPStack *_instance = nil;
     return err;
 }
 
+#pragma mark - tcp_pcb callback
+
+static err_t tcpAcceptCallback(void *arg, struct tcp_pcb *newpcb, err_t err)
+{
+    return [[YYTSIPStack defaultTun2SocksIPStack] didAcceptTcpPcb:newpcb error:err];
+}
+
+static err_t packetOutput(struct netif *netif, struct pbuf *p,
+                          const ip4_addr_t *ipaddr)
+{
+    [[YYTSIPStack defaultTun2SocksIPStack] sendOutPacket:p];
+    return ERR_OK;
+}
+
 @end
+
+
