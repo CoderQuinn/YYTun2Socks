@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#include <netinet/in.h>
+#include "lwip/tcp.h"
 
 @protocol YYTSTCPSocketDelegate;
 

@@ -9,6 +9,7 @@
 #ifndef YYTun2Socks_Bridging_Header_h
 #define YYTun2Socks_Bridging_Header_h
 
-#import "YYTun2Socks.h"
+#import "YYTSTCPSocket.h"
+#import "YYTun2Socks/YYTSIPStack.h"
 
 #endif /* YYTun2Socks_Bridging_Header_h */

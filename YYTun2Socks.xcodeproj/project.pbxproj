@@ -185,8 +185,6 @@
 		EAE1D3841F72D01F00574139 /* timeouts.c in Sources */ = {isa = PBXBuildFile; fileRef = EA663EF31F726D0C007A2F8C /* timeouts.c */; };
 		EAE1D3851F72D01F00574139 /* udp.c in Sources */ = {isa = PBXBuildFile; fileRef = EA663EF41F726D0C007A2F8C /* udp.c */; };
 		EAE1D3871F72D01F00574139 /* sys_arch.c in Sources */ = {isa = PBXBuildFile; fileRef = EA663EF71F726D0C007A2F8C /* sys_arch.c */; };
-		EAE1D38C1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */; };
-		EAE1D38D1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */; };
 		EAE1D3901F73C41400574139 /* YYTSTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAE1D3911F73C41400574139 /* YYTSTCPSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EAE1D3921F73C41400574139 /* YYTSTCPSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */; };
@@ -460,7 +458,6 @@
 		EA663F1F1F726D0C007A2F8C /* UPGRADING */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UPGRADING; sourceTree = "<group>"; };
 		EA663F201F726D0C007A2F8C /* YYTun2Socks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2Socks.h; sourceTree = "<group>"; };
 		EA88AC7F1F7B948B001E3791 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTun2SocksPrefixHeader.pch; sourceTree = "<group>"; };
 		EAE1D38E1F73C41300574139 /* YYTSTCPSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTSTCPSocket.h; sourceTree = "<group>"; };
 		EAE1D38F1F73C41400574139 /* YYTSTCPSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTSTCPSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -510,7 +507,6 @@
 				EA5B4D621F727DB400ED6F9F /* YYTSIPStack.m */,
 				EA663F201F726D0C007A2F8C /* YYTun2Socks.h */,
 				EA515DC11F7E2B4F001CC466 /* YYTun2Socks-Bridging-Header.h */,
-				EAE1D38B1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch */,
 				EA663DF71F726D0B007A2F8C /* Info.plist */,
 				EA663DF81F726D0B007A2F8C /* lwip */,
 			);
@@ -1089,7 +1085,6 @@
 				EA5B4D821F7280EE00ED6F9F /* ip6.h in Headers */,
 				EA5B4D831F7280EE00ED6F9F /* ip6_addr.h in Headers */,
 				EA5B4D841F7280EE00ED6F9F /* ip6_frag.h in Headers */,
-				EAE1D38C1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch in Headers */,
 				EA5B4D851F7280EE00ED6F9F /* ip_addr.h in Headers */,
 				EA5B4D861F7280EE00ED6F9F /* mem.h in Headers */,
 				EA5B4D871F7280EE00ED6F9F /* memp.h in Headers */,
@@ -1150,7 +1145,6 @@
 				EAE1D3481F72CFAF00574139 /* ip6.h in Headers */,
 				EAE1D3491F72CFAF00574139 /* ip6_addr.h in Headers */,
 				EAE1D34A1F72CFAF00574139 /* ip6_frag.h in Headers */,
-				EAE1D38D1F73A8F700574139 /* YYTun2SocksPrefixHeader.pch in Headers */,
 				EAE1D34B1F72CFAF00574139 /* ip_addr.h in Headers */,
 				EAE1D34C1F72CFAF00574139 /* mem.h in Headers */,
 				EAE1D34D1F72CFAF00574139 /* memp.h in Headers */,
@@ -1371,7 +1365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NONNULL = YES_NONAGGRESSIVE;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1383,9 +1377,9 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/YYTun2Socks/YYTun2SocksPrefixHeader.pch";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/YYTun2Socks/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1407,7 +1401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
-				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ANALYZER_NONNULL = YES_NONAGGRESSIVE;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_ENABLE_MODULES = YES;
@@ -1418,9 +1412,9 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "$(SRCROOT)/YYTun2Socks/YYTun2SocksPrefixHeader.pch";
+				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/YYTun2Socks/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1453,6 +1447,8 @@
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/YYTun2Socks/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -1486,6 +1482,8 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				INFOPLIST_FILE = "$(SRCROOT)/YYTun2Socks/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
