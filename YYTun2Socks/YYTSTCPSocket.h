@@ -10,6 +10,8 @@
 
 @protocol YYTSTCPSocketDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface YYTSTCPSocket : NSObject
 
 @property (nonatomic, assign, readonly) struct in_addr sourceAddress;
@@ -22,7 +24,7 @@
 
 - (instancetype)initWithTCPPcb:(struct tcp_pcb*)pcb queue:(dispatch_queue_t)queue;
 
-- (void)setDelegate:(id<YYTSTCPSocketDelegate>)delegate;
+- (void)setDelegate:(nullable id<YYTSTCPSocketDelegate>)delegate;
 
 @end
 
@@ -41,3 +43,5 @@
 - (void)socket:(YYTSTCPSocket *)socket didWriteDataOfLength:(NSUInteger)length;
 
 @end
+
+NS_ASSUME_NONNULL_END

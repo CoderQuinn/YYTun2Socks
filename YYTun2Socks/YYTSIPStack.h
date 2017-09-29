@@ -8,22 +8,24 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void(^outputPacketCallback)(NSData *packet, int family);
+typedef void(^outputPacketCallback)(NSData * _Nullable packet, int family);
 
 @class YYTSTCPSocket;
 @protocol YYTSIPStackDelegate;
 
+NS_ASSUME_NONNULL_BEGIN
+
 @interface YYTSIPStack : NSObject
 
-@property (nonatomic, weak, readonly) id<YYTSIPStackDelegate> delegate;
+@property (nullable, nonatomic, weak, readonly) id<YYTSIPStackDelegate> delegate;
 
 @property (nonatomic, copy, readonly) outputPacketCallback outputCallback;
 
 + (instancetype)defaultTun2SocksIPStack;
 
-- (void)setDelegate:(id<YYTSIPStackDelegate>)delegate;
+- (void)setDelegate:(nullable id<YYTSIPStackDelegate>)delegate;
 
-- (void)setOutputCallback:(outputPacketCallback)outputCallback;
+- (void)setOutputCallback:(nullable outputPacketCallback)outputCallback;
 
 - (void)suspendTimer;
 
@@ -38,6 +40,8 @@ typedef void(^outputPacketCallback)(NSData *packet, int family);
 - (void)didAcceptTCPSocket:(YYTSTCPSocket *)socket;
 
 @end
+
+NS_ASSUME_NONNULL_END
 
 
 
