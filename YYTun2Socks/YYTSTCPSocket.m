@@ -7,7 +7,6 @@
 //
 
 #import "YYTSTCPSocket.h"
-#include "lwip/tcp.h"
 
 @interface YYTSTCPSocket ()
 
