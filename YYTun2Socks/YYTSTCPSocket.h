@@ -8,7 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #include <netinet/in.h>
-#include "lwip/tcp.h"
+
+struct tcp_pcb;
 
 @protocol YYTSTCPSocketDelegate;
 
