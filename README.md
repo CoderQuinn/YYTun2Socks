@@ -6,4 +6,4 @@ YYTun2socks（Experimental）
  =========
 ### 声明
 
-之前根据NEKit适配的tun2socks，后面由于某些原因，暂停开发维护了，目前只具有参考价值，不过这个项目是有排期重启的！
+之前根据[NEKit](https://github.com/zhuhaow/NEKit)适配的tun2socks，后面由于某些原因，暂停开发维护了，目前只具有参考价值，不过这个项目是有排期重启的！
